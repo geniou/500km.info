@@ -15,8 +15,14 @@ module Jekyll
     def page_data
       {
         'layout' => 'tour_overview',
-        'tours'  => load_tours
+        'tours'  => tours
       }
+    end
+
+    def tours
+      load_tours
+        .sort { |a, b| a['year'] <=> b['year'] }
+        .reverse
     end
 
     def load_tours

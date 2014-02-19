@@ -1,2 +1,59 @@
 ---
 ---
+
+$text-color: #000;
+
+body {
+  color: $text-color;
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+main {
+  display: block;
+  margin: 0 auto;
+  width: 1400px;
+}
+
+.tour {
+  -moz-box-sizing: border-box;
+  display: inline-block;
+  float: left;
+  padding: 0 15px 15px 0;
+  position: relative;
+  transition: opacity 0.5s;
+  width: 33%;
+  img {
+    float: left;
+    width: 100%;
+  }
+  h1 {
+    background: rgba(255, 255, 255, 0.7);
+    bottom: 10px;
+    color: $text-color;
+    font-size: 20px;
+    opacity: 0;
+    padding: 0 5px;
+    position: absolute;
+    right: 25px;
+    transition: opacity 0.5s;
+  }
+  &:hover {
+    h1 {
+      opacity: 1;
+    }
+  }
+}
+
+.tour-overview {
+  &:hover {
+    .tour {
+      opacity: 0.5;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -2,11 +2,13 @@
 layout: default
 ---
 
-{% for tour in page.tours  %}
-  <article>
-    <a href="{{ tour.path }}">
-      <img src="/images/{{ tour.year }}/{{ tour.intro_image }}" alt="{{ tour.title }}" />
-      <h1>{{ tour.title }}</h1>
-    </a>
-  </article>
-{% endfor %}
+<div class="tour-overview">
+  {% for tour in page.tours  %}
+    <article class="tour">
+      <a href="{{ tour.path }}">
+        <img src="/images/{{ tour.year }}/{{ tour.intro_image }}" alt="{{ tour.title }}" />
+        <h1>{{ tour.title }}</h1>
+      </a>
+    </article>
+  {% endfor %}
+</div>
