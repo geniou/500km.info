@@ -3,7 +3,12 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }} - Radtour Chronik</title>
+        <title>
+          {% if page.title %}
+          {{ page.title }} -
+          {% endif %}
+          Radtour Chronik
+        </title>
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="/styles/app.css">
         <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -17,7 +22,14 @@
     <body>
       <header>
         <div class="container">
-          <a href="/"><h1>500km.info - Radtour-Chronik</h1></a>
+          <a href="/">
+            <h1>
+              {% if page.year %}
+              {{ page.year }}:
+              {% endif %}
+              {{ page.title }}
+            </h1>
+          </a>
         </div>
       </header>
       <main>

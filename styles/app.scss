@@ -40,6 +40,21 @@ header {
   h1 {
     color: $text-color;
     margin: 0;
+    padding-top: 15px;
+    &:before {
+      background: url('/images/logo.svg') left top no-repeat;
+      content: '';
+      display: inline-block;
+      height: 70px;
+      margin-right: 20px;
+      width: 70px;
+    }
+    &:hover {
+      color: #1a1a1a;
+      &:before {
+        background-position: left bottom;
+      }
+    }
   }
 }
 
