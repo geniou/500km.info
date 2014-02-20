@@ -15,6 +15,7 @@ module Jekyll
     def page_data
       {
         'layout' => 'tour_overview',
+        'title' => '500km',
         'tours'  => tours
       }
     end

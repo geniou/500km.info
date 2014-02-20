@@ -17,10 +17,10 @@ body {
 }
 
 a {
-  color: #a00;
+  color: #808080;
   text-decoration: none;
   &:hover {
-    color: #800000;
+    color: #4d4d4d;
   }
 }
 
@@ -52,12 +52,6 @@ main:after {
 footer {
   clear: both;
   margin-top: 30px;
-  a {
-    color: #808080;
-    &:hover {
-      color: #4d4d4d;
-    }
-  }
 }
 
 .tour {
@@ -186,6 +180,9 @@ footer {
 .description,
 .track {
   width: 33%;
+  a:before {
+    content: '» ';
+  }
 }
 
 .description > div {
