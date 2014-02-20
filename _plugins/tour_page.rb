@@ -15,11 +15,17 @@ module Jekyll
     def load_data(name)
       load_yaml("_tours/#{name}.yml").tap do |data|
         data['layout'] = 'tour'
+        data['images'] = load_images(data['year'])
       end
     end
 
     def load_yaml(path)
       YAML.load(File.read(File.join(@base, path)))
+    end
+
+    def load_images(year)
+      Dir["images/#{year}/*.*"]
+        .sort
     end
   end
 

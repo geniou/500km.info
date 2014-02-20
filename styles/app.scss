@@ -2,6 +2,7 @@
 ---
 
 @import url(http://fonts.googleapis.com/css?family=Istok+Web:400,700);
+@import 'bourbon/bourbon';
 
 $text-color: #333;
 
@@ -60,7 +61,7 @@ footer {
 }
 
 .tour {
-  -moz-box-sizing: border-box;
+  @include box-sizing(border-box);
   display: inline-block;
   float: left;
   overflow: hidden;
@@ -116,9 +117,69 @@ footer {
 .images {
   background: #fff;
   padding: 20px 0;
-  img {
+  position: relative;
+  .slides {
+    margin: 0 70px;
+    padding: 0;
+    &:after {
+      clear: both;
+      content: '';
+      display: block;
+    }
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  .flex-control-nav {
     display: block;
-    margin: 0 auto;
-    max-width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    li {
+      display: inline;
+      padding: 0 5px;
+    }
+    a {
+      @include hide-text;
+      background: #f2f2f2;
+      display: inline-block;
+      height: 15px;
+      width: 15px;
+      &.flex-active {
+        background: $text-color;
+      }
+    }
+  }
+  .flex-direction-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      display: inline;
+    }
+    .flex-prev,
+    .flex-next {
+      @include hide-text;
+      background: #f2f2f2;
+      display: inline-block;
+      height: 50px;
+      margin-top: -25px;
+      position: absolute;
+      top: 50%;
+      width: 50px;
+      &:hover {
+        background: $text-color;
+      }
+    }
+    .flex-prev {
+      content: '<';
+      left: 15px;
+    }
+    .flex-next {
+      content: '>';
+      right: 15px;
+    }
   }
 }
