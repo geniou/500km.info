@@ -1,48 +1,103 @@
 ---
 ---
 
-$text-color: #000;
+@import url(http://fonts.googleapis.com/css?family=Istok+Web:400,700);
+
+$text-color: #333;
 
 body {
+  background: #f2f2f2;
   color: $text-color;
-  font-family: sans-serif;
+  font-family: 'Istok Web', sans-serif;
   font-size: 16px;
+  font-weight: 400;
   line-height: 1.5;
   margin: 0;
 }
 
-main {
+a {
+  color: #a00;
+  text-decoration: none;
+  &:hover {
+    color: #800000;
+  }
+}
+
+header .container,
+main,
+footer {
   display: block;
   margin: 0 auto;
   width: 1400px;
+}
+
+header {
+  background: #fff;
+  height: 100px;
+  box-shadow: 0 0 2px #ccc;
+  margin-bottom: 30px;
+  h1 {
+    color: $text-color;
+    margin: 0;
+  }
+}
+
+main:after {
+  clear: both;
+  content: '';
+  display: block;
+}
+
+footer {
+  clear: both;
+  margin-top: 30px;
+  a {
+    color: #808080;
+    &:hover {
+      color: #4d4d4d;
+    }
+  }
 }
 
 .tour {
   -moz-box-sizing: border-box;
   display: inline-block;
   float: left;
-  padding: 0 15px 15px 0;
+  overflow: hidden;
+  padding: 10px;
   position: relative;
   transition: opacity 0.5s;
   width: 33%;
   img {
+    box-shadow: 0 0 2px #333;
     float: left;
     width: 100%;
   }
+  .year,
   h1 {
-    background: rgba(255, 255, 255, 0.7);
-    bottom: 10px;
+    background: #fff;
     color: $text-color;
-    font-size: 20px;
-    opacity: 0;
     padding: 0 5px;
     position: absolute;
-    right: 25px;
-    transition: opacity 0.5s;
+  }
+  .year {
+    top: 25px;
+    left: -100%;
+    transition: left 0.3s;
+  }
+  h1 {
+    bottom: 10px;
+    font-size: 1.5em;
+    font-weight: 700;
+    right: -100%;
+    transition: right 0.3s;
   }
   &:hover {
+    .year {
+      left: 25px;
+    }
     h1 {
-      opacity: 1;
+      right: 25px;
     }
   }
 }
