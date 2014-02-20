@@ -57,6 +57,9 @@ footer {
 .tour {
   position: relative;
   transition: opacity 0.5s;
+  &:first-child {
+    width: 66%;
+  }
   img {
     float: left;
     width: 100%;
@@ -113,6 +116,11 @@ footer {
   width: 33%;
 }
 
+.images,
+.description {
+  width: 66%;
+}
+
 .tour img,
 .images img {
   box-shadow: 0 0 2px #333;
@@ -120,7 +128,6 @@ footer {
 
 .images {
   position: relative;
-  width: 66%;
   &:hover {
     .flex-direction-nav {
       display: block;
@@ -177,7 +184,6 @@ footer {
   }
 }
 
-.description,
 .track {
   width: 33%;
   a:before {
@@ -185,10 +191,13 @@ footer {
   }
 }
 
-.description > div {
-  padding: 10px;
-  background: #fff;
-  p {
-    margin: 0;
+.description,
+.track {
+  > div {
+    padding: 10px;
+    background: #fff;
+    p {
+      margin: 0;
+    }
   }
 }
