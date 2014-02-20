@@ -29,7 +29,7 @@ main,
 footer {
   display: block;
   margin: 0 auto;
-  width: 1400px;
+  max-width: 1200px;
 }
 
 header {
@@ -116,10 +116,14 @@ footer {
 
 .images {
   background: #fff;
-  padding: 20px 0;
   position: relative;
+  &:hover {
+    .flex-direction-nav {
+      display: block;
+    }
+  }
   .slides {
-    margin: 0 70px;
+    margin: 0;
     padding: 0;
     &:after {
       clear: both;
@@ -129,33 +133,17 @@ footer {
     img {
       display: block;
       margin: 0 auto;
+      width: 100%;
     }
   }
   .flex-control-nav {
-    display: block;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    li {
-      display: inline;
-      padding: 0 5px;
-    }
-    a {
-      @include hide-text;
-      background: #f2f2f2;
-      display: inline-block;
-      height: 15px;
-      width: 15px;
-      &.flex-active {
-        background: $text-color;
-      }
-    }
+    display: none;
   }
   .flex-direction-nav {
     margin: 0;
     padding: 0;
     list-style: none;
+    display: none;
     li {
       display: inline;
     }
@@ -169,6 +157,7 @@ footer {
       position: absolute;
       top: 50%;
       width: 50px;
+      z-index: 10;
       &:hover {
         background: $text-color;
       }
