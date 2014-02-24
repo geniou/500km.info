@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>
           {% if page.title %}
           {{ page.title }} -
           {% endif %}
           Radtour Chronik
         </title>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="/styles/app.css">
+        <meta name="author" content="Nils Gemeinhardt">
+        <meta name="description" content="Schon seit 2006 machen wir jedes Jahr eine Radtour mit einer Länge von jeweils etwa 500km.
+        Dabei ging es schon entlang der Elbe und dem Rhein, nach Dänemark (Limfjord) und Ungarn und über den Alpen.
+        Diese Seite dokumentiert anhang von Bildern und Streckendaten die Touren und unsere Eindrücke.">
+        <meta name="keywords" content="Radtour, Fahrrad, Tour, Elbe, Rhein, Dänemark, Ungarn, Balaton, Oder, Neiße, Alpen">
+        {% capture social_image %}{% if page.intro_image %}{{ page.intro_image }}{% else %}{{ "/images/social.png" }}{% endif %}{% endcapture %}
+        <meta property="og:image" content="{{ social_image }}">
+        <link href="/styles/app.css" rel="stylesheet">
+        <link href="/images/favicon.png" rel="shortcut icon">
         <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="/scripts/google_analytics.js"></script>
         <script src="/scripts/jquery.flexslider.min.js"></script>
         <script>
           $(function(){

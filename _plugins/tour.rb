@@ -8,7 +8,7 @@ class Tour
       data.merge!({
         'path' => tour_path,
         'images' => images,
-        'into_image' => intro_image
+        'intro_image' => intro_image
       })
     end
   end
