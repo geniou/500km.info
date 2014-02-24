@@ -15,7 +15,7 @@ module Jekyll
     def load_data(name)
       load_yaml("_tours/#{name}.yml").tap do |data|
         data['layout'] = 'tour'
-        data['images'] = load_images(data['year'])
+        data['images'] = load_images(name)
       end
     end
 
@@ -23,8 +23,8 @@ module Jekyll
       YAML.load(File.read(File.join(@base, path)))
     end
 
-    def load_images(year)
-      Dir["images/#{year}/*.*"]
+    def load_images(name)
+      Dir["images/#{name}/*.*"]
         .sort
     end
   end

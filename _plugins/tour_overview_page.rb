@@ -34,12 +34,18 @@ module Jekyll
 
     def tour_data(file_path)
       YAML.load(File.read(file_path)).tap do |tour|
-        tour['path'] = tour_path(file_path)
+        file_name = File.basename(file_path, '.yml')
+        tour['path'] = tour_path(file_name)
+        tour['into_image'] = intro_image(file_name)
       end
     end
 
-    def tour_path(file_path)
-      File.basename(file_path, '.yml').gsub('_', '-')
+    def tour_path(file_name)
+      "/#{file_name.gsub('_', '-')}"
+    end
+
+    def intro_image(file_name)
+      "/images/#{file_name}.jpg"
     end
   end
 
