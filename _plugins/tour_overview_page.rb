@@ -15,7 +15,7 @@ module Jekyll
     def page_data
       {
         'layout' => 'tour_overview',
-        'title' => 'Radtour-Chronik',
+        'title'  => 'Radtour-Chronik',
         'tours'  => tours
       }
     end
@@ -28,24 +28,8 @@ module Jekyll
 
     def load_tours
       Dir['_tours/*.yml'].map do |path|
-        tour_data(path)
+        Tour.new(path).data
       end
-    end
-
-    def tour_data(file_path)
-      YAML.load(File.read(file_path)).tap do |tour|
-        file_name = File.basename(file_path, '.yml')
-        tour['path'] = tour_path(file_name)
-        tour['into_image'] = intro_image(file_name)
-      end
-    end
-
-    def tour_path(file_name)
-      "/#{file_name.gsub('_', '-')}"
-    end
-
-    def intro_image(file_name)
-      "/images/#{file_name}.jpg"
     end
   end
 

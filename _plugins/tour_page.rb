@@ -10,22 +10,13 @@ module Jekyll
       self.data = load_data(name)
     end
 
-    private
-
     def load_data(name)
-      load_yaml("_tours/#{name}.yml").tap do |data|
-        data['layout'] = 'tour'
-        data['images'] = load_images(name)
-      end
+      tour = Tour.new(tour_path(name))
+      tour.data.merge('layout' => 'tour')
     end
 
-    def load_yaml(path)
-      YAML.load(File.read(File.join(@base, path)))
-    end
-
-    def load_images(name)
-      Dir["images/#{name}/*.*"]
-        .sort
+    def tour_path(name)
+      File.join(@base, "_tours/#{name}.yml")
     end
   end
 
