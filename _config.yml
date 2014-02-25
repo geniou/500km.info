@@ -1,1 +1,2 @@
-name: '500.info'
+name: '500km.info'
+exclude: [README*, Gemfile*, bin]
