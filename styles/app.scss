@@ -32,6 +32,12 @@ footer {
   max-width: 1010px;
 }
 
+header .container,
+footer {
+  @include box-sizing(border-box);
+  padding: 0 10px;
+}
+
 header {
   background: #fff;
   height: 100px;
@@ -58,10 +64,13 @@ header {
   }
 }
 
-main:after {
-  clear: both;
-  content: '';
-  display: block;
+main {
+  padding: 0;
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+  }
 }
 
 footer {
