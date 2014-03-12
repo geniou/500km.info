@@ -15,7 +15,6 @@ module Jekyll
     def page_data
       {
         'layout' => 'tour_overview',
-        'title'  => 'Radtour-Chronik',
         'tours'  => tours
       }
     end
