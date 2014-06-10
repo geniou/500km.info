@@ -156,6 +156,14 @@ footer {
   width: 66%;
 }
 
+.new-layout {
+  .images,
+  .description,
+  .track {
+    width: 100%;
+  }
+}
+
 .tour img,
 .images img {
   box-shadow: 0 0 2px #333;

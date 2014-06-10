@@ -12,7 +12,8 @@ module Jekyll
 
     def load_data(name)
       tour = Tour.new(tour_path(name))
-      tour.data.merge('layout' => 'tour')
+      layout = tour.data['new_layout'] ? 'tour_new_layout' : 'tour'
+      tour.data.merge('layout' => layout)
     end
 
     def tour_path(name)
