@@ -7,7 +7,7 @@
 $text-color: #333;
 
 body {
-  background: #f2f2f2;
+  background: #e5e5e5;
   color: $text-color;
   font-family: 'Istok Web', sans-serif;
   font-size: 16px;
@@ -20,52 +20,44 @@ a {
   color: #808080;
   text-decoration: none;
   &:hover {
-    color: #4d4d4d;
+    color: #000;
   }
 }
 
-header .container,
-main,
-footer {
+.container {
   display: block;
   margin: 0 auto;
   max-width: 1010px;
-}
-
-header .container,
-footer {
   @include box-sizing(border-box);
-  padding: 0 10px;
+  padding: 32px;
+  background: #fff;
 }
 
 header {
-  background: #fff;
-  height: 100px;
-  box-shadow: 0 0 2px #ccc;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
+  vertical-align: bottom;
+  img,
+  h1 {
+    display: inline-block;
+  }
   h1 {
     color: $text-color;
-    margin: 0;
-    padding-top: 15px;
-    &:before {
-      background: url('/images/logo.svg') left top no-repeat;
-      content: '';
-      display: inline-block;
-      height: 70px;
-      margin-right: 20px;
-      width: 70px;
+    margin: 0 0 0 10px;
+    font-size: 1.8em;
+    line-height: 1em;
+    .year {
+      font-size: 0.6em;
     }
+  }
+  a {
+    opacity: 0.9;
     &:hover {
-      color: #1a1a1a;
-      &:before {
-        background-position: left bottom;
-      }
+      opacity: 1;
     }
   }
 }
 
 main {
-  padding: 0;
   &:after {
     clear: both;
     content: '';
@@ -75,7 +67,7 @@ main {
 
 footer {
   clear: both;
-  margin-top: 30px;
+  margin-top: 24px;
   font-size: 0.8em;
   ul {
     list-style: none;
@@ -92,8 +84,14 @@ footer {
 .tour {
   position: relative;
   transition: opacity 0.5s;
+  width: 33.3%;
+  padding: 8px;
+  @include box-sizing(border-box);
+  float: left;
+  overflow: hidden;
   &:first-child {
-    width: 66%;
+    width: 99.9%;
+    font-size: 1.5em;
   }
   img {
     float: left;
@@ -113,10 +111,11 @@ footer {
   }
   h1 {
     bottom: 10px;
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: 700;
     right: -100%;
     transition: right 0.3s;
+    margin: 20px 0;
   }
   &:hover {
     .year {
@@ -129,6 +128,7 @@ footer {
 }
 
 .tour-overview {
+  margin: -8px;
   &:hover {
     .tour {
       opacity: 0.5;
@@ -137,36 +137,6 @@ footer {
       }
     }
   }
-}
-
-.tour,
-.images,
-.description,
-.track {
-  @include box-sizing(border-box);
-  display: inline-block;
-  float: left;
-  overflow: hidden;
-  padding: 10px;
-  width: 33%;
-}
-
-.images,
-.description {
-  width: 66%;
-}
-
-.new-layout {
-  .images,
-  .description,
-  .track {
-    width: 100%;
-  }
-}
-
-.tour img,
-.images img {
-  box-shadow: 0 0 2px #333;
 }
 
 .images {
@@ -220,17 +190,16 @@ footer {
     }
     .flex-prev {
       background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczpzb2RpcG9kaT0iaHR0cDovL3NvZGlwb2RpLnNvdXJjZWZvcmdlLm5ldC9EVEQvc29kaXBvZGktMC5kdGQiIHhtbG5zOmlua3NjYXBlPSJodHRwOi8vd3d3Lmlua3NjYXBlLm9yZy9uYW1lc3BhY2VzL2lua3NjYXBlIiB3aWR0aD0iMjAiIGhlaWdodD0iNDAiIHZlcnNpb249IjEuMSI+CiA8bWV0YWRhdGEgaWQ9Im1ldGFkYXRhMzQ3MyIvPgogPGcgaW5rc2NhcGU6bGFiZWw9IkxheWVyIDEiIGlua3NjYXBlOmdyb3VwbW9kZT0ibGF5ZXIiIGlkPSJsYXllcjEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsLTEwMTIuMzYyMikiPgogIDxnIHRyYW5zZm9ybT0ic2NhbGUoLTAuNjUzODAyMDYsMS41Mjk1MTQ5KSIgaWQ9InRleHQzNDg1IiBmaWxsPSIjMmIwMDAwIj4KICAgPHBhdGggZD0ibSAtMzAuNTkwMjk4LDY2Ni4yMjcyNiAwLC00LjM0Mjc3IDMwLjU5MDI5OTIzNDkzMzcsMTEuMDk1NTQgMCwzLjk2MSBMIC0zMC41OTAyOTgsNjg4LjAzNjU3IGwgMCwtNC4zNDI3NyAyNC41NzcyMjk1LC04LjcwOTQxIC0yNC41NzcyMjk1LC04Ljc1NzEzIiBpZD0icGF0aDM1MDkiIGZpbGw9IiNmZmZmZmYiLz4KICA8L2c+CiA8L2c+Cjwvc3ZnPgo=");
-      left: 15px;
+      left: -20px;
     }
     .flex-next {
       background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczpzb2RpcG9kaT0iaHR0cDovL3NvZGlwb2RpLnNvdXJjZWZvcmdlLm5ldC9EVEQvc29kaXBvZGktMC5kdGQiIHhtbG5zOmlua3NjYXBlPSJodHRwOi8vd3d3Lmlua3NjYXBlLm9yZy9uYW1lc3BhY2VzL2lua3NjYXBlIiB3aWR0aD0iMjAiIGhlaWdodD0iNDAiIHZlcnNpb249IjEuMSI+CiA8bWV0YWRhdGEgaWQ9Im1ldGFkYXRhMzQ3MyIvPgogPGcgaW5rc2NhcGU6bGFiZWw9IkxheWVyIDEiIGlua3NjYXBlOmdyb3VwbW9kZT0ibGF5ZXIiIGlkPSJsYXllcjEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsLTEwMTIuMzYyMikiPgogIDxnIHRyYW5zZm9ybT0ibWF0cml4KDAuNjUzODAyMDYsMCwwLDEuNTI5NTE0OSwxOS45OTk5OTksMCkiIGlkPSJ0ZXh0MzQ4NSIgZmlsbD0iIzJiMDAwMCI+CiAgIDxwYXRoIGQ9Im0gLTMwLjU5MDI5OCw2NjYuMjI3MjYgMCwtNC4zNDI3NyAzMC41OTAyOTkyMzQ5MzM3LDExLjA5NTU0IDAsMy45NjEgTCAtMzAuNTkwMjk4LDY4OC4wMzY1NyBsIDAsLTQuMzQyNzcgMjQuNTc3MjI5NSwtOC43MDk0MSAtMjQuNTc3MjI5NSwtOC43NTcxMyIgaWQ9InBhdGgzNTA5IiBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIiBmaWxsPSIjZmZmZmZmIi8+CiAgPC9nPgogPC9nPgo8L3N2Zz4K);
-      right: 15px;
+      right: -20px;
     }
   }
 }
 
 .track {
-  width: 33%;
   a:before {
     content: '» ';
   }
@@ -238,9 +207,8 @@ footer {
 
 .description,
 .track {
+  margin-top: 32px;
   > div {
-    padding: 10px;
-    background: #fff;
     p {
       margin: 0;
     }

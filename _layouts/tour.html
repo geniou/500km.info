@@ -12,20 +12,6 @@ layout: default
   </ul>
 </div>
 
-<div class="track">
-  <div>
-    {% if page.track_id %}
-    <iframe src="http://www.bikemap.net/en/route/{{ page.track_id }}/widget/?width=290&amp;height=350&amp;unit=metric" height="350" scrolling="no"></iframe>
-    {% endif %}
-
-    <p>{{ page.track }}</p>
-
-    {% if page.track_id %}
-    <p><a href="http://www.bikemap.net/de/route/{{ page.track_id }}">Tour auf bikemap.net ansehen</a></p>
-    {% endif %}
-  </div>
-</div>
-
 {% if page.description %}
 <div class="description">
   <div>
@@ -34,3 +20,11 @@ layout: default
 </div>
 {% endif %}
 
+{% if page.track_id %}
+<div class="track">
+  <div>
+    <iframe src="http://www.bikemap.net/en/route/{{ page.track_id }}/widget/?width=970&amp;height=570&amp;unit=metric" height="530" scrolling="no"></iframe>
+    <p><a href="http://www.bikemap.net/de/route/{{ page.track_id }}">Tour auf bikemap.net ansehen</a></p>
+  </div>
+</div>
+{% endif %}
