@@ -8,6 +8,9 @@ $text-color: #333;
 $spacing: 32px;
 $image-width: 990px;
 
+$small: 600px;
+$middle: 950px;
+
 body {
   background: #e5e5e5;
   color: $text-color;
@@ -38,13 +41,17 @@ main,
 footer {
   padding: $spacing;
   background: #fff;
+
+  @media (max-width: 950px) {
+    padding: $spacing / 2;
+  }
 }
 
 header {
   vertical-align: bottom;
   background: #fff;
   margin-top: 64px;
-  padding: 16px 32px 0;
+  padding: 16px $spacing 0;
 
   a,
   h1 {
@@ -69,6 +76,15 @@ header {
       opacity: 1;
     }
   }
+
+  @media (max-width: $small) {
+    text-align: center;
+
+    h1 {
+      margin: 0;
+      display: block;
+    }
+  }
 }
 
 main:after {
@@ -79,7 +95,7 @@ main:after {
 
 footer {
   clear: both;
-  margin-bottom: 32px;
+  margin-bottom: $spacing;
   font-size: 0.8em;
 
   ul {
@@ -93,6 +109,10 @@ footer {
     display: inline;
     margin-left: 10px;
   }
+
+  @media (max-width: $middle) {
+    margin-bottom: 0;
+  }
 }
 
 .tour {
@@ -103,6 +123,23 @@ footer {
   padding: 8px;
   float: left;
   overflow: hidden;
+
+  @media (max-width: 950px) {
+    width: 50%;
+
+    .year {
+      left: 25px !important;
+    }
+
+    h1 {
+      right: 25px !important;
+    }
+  }
+
+  @media (max-width: $small) {
+    width: 100%;
+    font-size: 1em !important;
+  }
 
   &:first-child {
     width: 99.9%;
@@ -230,6 +267,12 @@ footer {
 }
 
 .track {
+  iframe {
+    @media (max-width: $small) {
+      display: none;
+    }
+  }
+
   a:before {
     content: '» ';
   }
@@ -237,7 +280,7 @@ footer {
 
 .description,
 .track {
-  margin-top: 32px;
+  margin-top: $spacing;
 
   > div p {
     margin: 0;
