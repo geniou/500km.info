@@ -3,9 +3,11 @@
     <head>
         <title>
           {% if page.title %}
-          {{ page.title }} -
+          {{ page.title }}
           {% endif %}
-          Radtour Chronik
+          {% if page.title != 'die Radtour Chronik' %}
+          - Radtour Chronik
+          {% endif %}
         </title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
