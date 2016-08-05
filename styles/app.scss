@@ -39,9 +39,6 @@ a {
 
 main,
 footer {
-  padding: $spacing;
-  background: #fff;
-
   @media (max-width: 950px) {
     padding: $spacing / 2;
   }
@@ -87,16 +84,22 @@ header {
   }
 }
 
-main:after {
-  clear: both;
-  content: '';
-  display: block;
+main {
+  background: #fff;
+  padding: $spacing;
+
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+  }
 }
 
 footer {
   clear: both;
   margin-bottom: $spacing;
   font-size: 0.8em;
+  padding-top: $spacing / 2;
 
   ul {
     list-style: none;
