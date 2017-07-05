@@ -2,7 +2,6 @@
 ---
 
 @import url(http://fonts.googleapis.com/css?family=Istok+Web:400,700);
-@import 'bourbon/bourbon';
 
 $text-color: #333;
 $spacing: 32px;
@@ -34,7 +33,7 @@ a {
   display: block;
   margin: 0 auto;
   max-width: $image-width + 2 * $spacing;
-  @include box-sizing(border-box);
+  box-sizing: border-box;;
 }
 
 main,
@@ -119,7 +118,7 @@ footer {
 }
 
 .tour {
-  @include box-sizing(border-box);
+  box-sizing: border-box;;
   position: relative;
   transition: opacity 0.5s;
   width: 33.3%;
@@ -246,11 +245,12 @@ footer {
 
     .flex-prev,
     .flex-next {
-      @include hide-text;
       background-color: $text-color;
       background-position: center center;
       background-repeat: no-repeat;
+      color:            transparent;
       display: inline-block;
+      font:             0/0 a;
       height: 60px;
       margin-top: -30px;
       position: absolute;
