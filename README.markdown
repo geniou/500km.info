@@ -10,3 +10,9 @@ The site is based on [jekyll](http://jekyllrb.com)
 
 For local development use `bundle exec jekyll serve -w`. So you can
 browse [localhost:4000](http://localhost:4000) and see the site.
+
+## Image resizing
+
+```bash
+convert '*.jpg[990x]' -set filename:base "%[base]" "resized/%[filename:base].jpg"
+```
