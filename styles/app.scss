@@ -39,7 +39,7 @@ a {
 main,
 footer {
   @media (max-width: 950px) {
-    padding: $spacing / 2 !important;
+    padding: calc($spacing / 2) !important;
   }
 }
 
@@ -98,7 +98,7 @@ footer {
   clear: both;
   margin-bottom: $spacing;
   font-size: 0.8em;
-  padding-top: $spacing / 2;
+  padding-top: calc($spacing / 2);
 
   ul {
     list-style: none;
