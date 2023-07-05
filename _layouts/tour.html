@@ -2,6 +2,7 @@
 layout: default
 ---
 
+{% if page.images.lenght > 0 %}
 <div class="images">
   <ul class="slides">
     {% for image in page.images %}
@@ -11,6 +12,7 @@ layout: default
     {% endfor %}
   </ul>
 </div>
+{% endif %}
 
 {% if page.description %}
 <div class="description">
@@ -21,7 +23,7 @@ layout: default
 {% endif %}
 
 {% if page.track_id %}
-<div class="track">
-  <iframe src="http://www.bikemap.net/en/route/{{ page.track_id }}/widget/?width=970&amp;height=570&amp;unit=metric" height="530" scrolling="no"></iframe>
+  <div class="track">
+  <iframe src="https://www.bikemap.net/en/r/{{ page.track_id }}/widget/?width=425&amp;height=400&amp;extended=1&amp;distance_markers=1&amp;unit=metric" width="425" height="713.6666666666666" border="0" frameborder="0" marginheight="0" marginwidth="0" scrolling="no"> </iframe> <div style="margin: -4px 0 0 5px; height: 16px; color: #889EAC; font-family: sans-serif; font-size: 11px;"> <a href="https://www.bikemap.net/en/r/11136324/" style="color:#1381fa; text-decoration:underline;" target="_blank" rel="noopener">Cycle Route 11136324</a> - via <a href="https://www.bikemap.net" style="color:#1381fa; text-decoration:underline;" target="_blank">Bikemap.net</a> - <a href="https://bikemap.page.link/?link=https://www.bikemap.net/en/r/11136324/&apn=com.toursprung.bikemap&isi=625759466&ibi=com.toursprung.bikemap&st=Thüringenrunde+-+Final&sd=Check+out+this+route+on+Bikemap+by+geni!&si=https://media.bikemap.net/routes/11136324/staticmaps/in_e192bd7a-f252-493e-bd7f-2053f2b0e165_400x400_bikemap-2021-3D-static.png&efr=1&utm_source=website&utm_medium=route_widget&utm_campaign=widget_bottom" style="color:#1381fa; text-decoration:underline;" target="_blank"> Open Route in Bikemap App </a> </div>
 </div>
 {% endif %}
